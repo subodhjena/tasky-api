@@ -1,20 +1,25 @@
 language: node_js
 node_js:
-- v4
-- v5
-- v6
+  - v4
+  - v5
+  - v6
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
-    - gcc-4.8
-    - g++-4.8
+      - gcc-4.8
+      - g++-4.8
 script:
   - npm test -- -i --coverage
 env:
   global:
-  - CXX=g++-4.8
-  - SENDGRID_KEY=sendgridKey
-  - MASTER_KEY=masterKey
-  - JWT_SECRET=jwtSecret
+    - CXX=g++-4.8
+    - SENDGRID_KEY=sendgridKey
+    - MASTER_KEY=masterKey
+    - JWT_SECRET=jwtSecret
+deploy:
+  provider: heroku
+  app: tasky-api
+  api_key:
+    secure: d7P43r6PDCcipfYk8kGlBAoZeJI9q4RM9rwZOaXz6Qg5q+XPWKWKlEh9ZFA19GnywPZNXCBFAWSEA+1JfqSWZ7qdVDahDcSScqohGyi+LH2CLmBv8OaKO+Hxrgqykn/6yfVWhQCef5Pk5Ivt3oJUsiY+xUWKOYh7hyJMioSNJoTkfwFCNefzwl1n+E1k+Qx4TTjNmqROoy34awwRwdj6/hAm8QtvVPj+vNhhddXwvsbpk9/zaPzbRVqyunqg00hxikh9n35qX/TRTxdxG9pX+SjgSU3UKxoOaJrj7TOkYaQpfnaLwBTzxsbhJGcQJ78HqHxmF0iUX3znYf7O360jAwgZ4nDlueqdMmsRTvSclhlgK2ykBSCUbV53waUQpR63uVh5SYQKlL3iolmU89uFQqtz9OVp9FsvFifOz8FE5Ybfh6vYG97Hxyv4oA0hvAA4MS8B56io5ViGobnZMS6U11QY7PT0bNSEPaHuzPu7WZVs9sri0JcO2H8mItShYppqHRlzZ+judAE50lUpjyuN52sDlBVBdKfl5x/+36bh48L8myQde4X886XTusHWZPmZhTp6xYWjhyo81P45vHJxglaFDodKVNdjHgijzastBwjjkzoZBGoGs3Sk3U1fArb+Z3kAYGfr78GsnijhuF+aQiCxIC4J14SnPeq6wwPmd/8=
