@@ -8,6 +8,16 @@
 	- [Authenticate with Github](#authenticate-with-github)
 	- [Authenticate with Google](#authenticate-with-google)
 	
+- [Check](#check)
+	- [Retrieve checks](#retrieve-checks)
+	
+- [Example](#example)
+	- [Create example](#create-example)
+	- [Delete example](#delete-example)
+	- [Retrieve example](#retrieve-example)
+	- [Retrieve examples](#retrieve-examples)
+	- [Update example](#update-example)
+	
 - [PasswordReset](#passwordreset)
 	- [Send email](#send-email)
 	- [Submit password](#submit-password)
@@ -82,6 +92,84 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>Google user accessToken.</p>							|
+
+# Check
+
+## Retrieve checks
+
+
+
+	GET /health
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+# Example
+
+## Create example
+
+
+
+	POST /examples
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| title			| 			|  <p>Example's title.</p>							|
+
+## Delete example
+
+
+
+	DELETE /examples/:id
+
+
+## Retrieve example
+
+
+
+	GET /examples/:id
+
+
+## Retrieve examples
+
+
+
+	GET /examples
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update example
+
+
+
+	PUT /examples/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| title			| 			|  <p>Example's title.</p>							|
 
 # PasswordReset
 
