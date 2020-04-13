@@ -10,8 +10,9 @@ const router = new Router()
  * @apiSuccess {Object[]} checks List of checks.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get('/', function (req, res) {
-  res.send(req)
+router.get('/ip', function (req, res) {
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  res.send(ip)
 })
 
 export default router
