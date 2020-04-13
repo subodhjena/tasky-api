@@ -9,5 +9,5 @@ test('GET /health 200', async () => {
   const { status, body } = await request(app())
     .get(`${apiRoot}`)
   expect(status).toBe(200)
-  expect(Array.isArray(body)).toBe(true)
+  expect(Array.isArray(body)).toBe(false)
 })
