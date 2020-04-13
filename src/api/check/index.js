@@ -11,7 +11,7 @@ const router = new Router()
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/', function (req, res) {
-  res.send('hello')
+  res.send(req)
 })
 
 export default router
