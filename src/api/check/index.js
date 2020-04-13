@@ -1,6 +1,4 @@
 import { Router } from 'express'
-import { middleware as query } from 'querymen'
-import { index } from './controller'
 
 const router = new Router()
 
@@ -12,8 +10,8 @@ const router = new Router()
  * @apiSuccess {Object[]} checks List of checks.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get('/',
-  query(),
-  index)
+router.get('/', function (req, res) {
+  res.send('hello')
+})
 
 export default router
